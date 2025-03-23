@@ -658,7 +658,7 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
+        clangd = {},
         angularls = {},
         -- gopls = {},
         --pyright = {},
@@ -671,6 +671,7 @@ require('lazy').setup({
         jsonls = {},
         ltex = {},
         html = {},
+        -- dartls = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -730,6 +731,7 @@ require('lazy').setup({
             -- certain features of an LSP (for example, turning off formatting for ts_ls)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             require('lspconfig')[server_name].setup(server)
+            require('lspconfig').dartls.setup {}
           end,
         },
       }
@@ -986,6 +988,7 @@ require('lazy').setup({
         'css',
         'java',
         'python',
+        'dart',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
@@ -1018,7 +1021,7 @@ require('lazy').setup({
   require 'kickstart.plugins.debug',
   require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
-  -- require 'kickstart.plugins.autopairs',
+  require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
