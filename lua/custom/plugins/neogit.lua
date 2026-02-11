@@ -6,6 +6,10 @@ return {
 
       'nvim-telescope/telescope.nvim',
     },
-    config = true,
+    config = function()
+      vim.keymap.set('n', '<leader>gg', function()
+        require('neogit').open()
+      end, { desc = 'Open Neogit' })
+    end,
   },
 }
