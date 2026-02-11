@@ -590,7 +590,7 @@ require('lazy').setup({
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         ts_ls = {},
         cssls = {},
-        nil_ls = {},
+        --nil_ls = {},
         -- cssmodules_ls = {},
 
         --
