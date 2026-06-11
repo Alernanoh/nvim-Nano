@@ -12,7 +12,7 @@ require('fidget').setup {}
 local servers = {
   clangd = {},
   gopls = {},
-  pyright = {},
+  pylsp = {},
   rust_analyzer = {},
   stylua = {},
   lua_ls = {
